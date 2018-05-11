@@ -9,11 +9,10 @@ import { AddCoinPage } from '../add-coin/add-coin';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
-  }
+  addPage: any;
 
-  addPag(){
-    this.navCtrl.push(AddCoinPage);
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+    this.addPage = AddCoinPage;
   }
 
 }

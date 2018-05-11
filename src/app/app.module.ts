@@ -8,7 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { AddCoinPage } from '../pages/add-coin/add-coin';
 import { MarketPage } from '../pages/market/market';
 import { SharePage } from '../pages/share/share';
-import { PromotionPage } from '../pages/promotion/promotion';
+import { PromoPage } from '../pages/promo/promo';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,12 +20,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AddCoinPage,
     SharePage,
     HomePage,
-    TabsPage,
-    PromotionPage
+    PromoPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, { mode: 'ios' })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,8 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SharePage,
     MarketPage,
     HomePage,
-    TabsPage,
-    PromotionPage
+    PromoPage,
+    TabsPage
   ],
   providers: [
     StatusBar,

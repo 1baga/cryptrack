@@ -1,12 +1,6 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content padding>
-  <h2>Welcome</h2>
-  <ion-fab right bottom (click)="addPag()">
+  <ion-fab right top [navPush]="addPage">
     <button ion-fab color="primary"><ion-icon name="add-circle"></ion-icon></button>
   </ion-fab>
 </ion-content>

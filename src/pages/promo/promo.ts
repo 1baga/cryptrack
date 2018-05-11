@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the PromotionPage page.
+ * Generated class for the PromoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-promotion',
-  templateUrl: 'promotion.html',
+  selector: 'page-promo',
+  templateUrl: 'promo.html',
 })
-export class PromotionPage {
+export class PromoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PromotionPage');
+    console.log('ionViewDidLoad PromoPage');
   }
 
 }
