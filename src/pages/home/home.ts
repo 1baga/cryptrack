@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 
+import { AddCoinPage } from '../add-coin/add-coin';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -11,12 +13,7 @@ export class HomePage {
   }
 
   addPag(){
-    let toast = this.toastCtrl.create({
-      message: 'Go to the add page',
-      duration: 3000
-    });
-
-    toast.present();
+    this.navCtrl.push(AddCoinPage);
   }
 
 }
