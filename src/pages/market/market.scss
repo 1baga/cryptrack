@@ -1,23 +1,22 @@
 page-market {
 
-    ion-col div {
-        /*background-color: #f0f5ff;*/
-        border: 1px solid #e6e9ee;
-        border-radius: 2px;
-        padding: 5px;
-        text-align: center;
-        font-size: 18px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .price-down {
+        color: #ff4d4d;
       }
-
-      .aset{
-          text-align: start;
-          font-size: 18px;
+    
+      .price-up {
+        color: #5faf5f;
       }
-
-      .price{
-          text-align: end;
-          font-size: 18px;
-          color: #3B5998;
+    
+      .price-no-change {
+        color: black;
+      }
+    
+      .symbol {
+        font-weight: bold;
+      }
+    
+      .duration {
+        font-weight: bold;
       }
 }

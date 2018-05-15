@@ -1,12 +1,20 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Crptrack
+      </ion-title>      
+    </ion-navbar>
+  </ion-header>
+
 
 <ion-content padding>
-  <ion-fab right top [navPush]="addPage">
+  <ion-fab right bottom [navPush]="addPage">
     <button ion-fab color="primary"><ion-icon name="add-circle"></ion-icon></button>
   </ion-fab>
 
   <div class="message" *ngIf="!holdingsProvider.holdings.length">
       <p>You seem not to have any coin added. No hassle.</p>
-      <p>No account required, just hit the button below to start tracking your coins in whatever currency you wish!</p>
+      <p>No account required, just hit the button below to start tracking your coins.</p>
  
       <button ion-button full [navPush]="addPage" color="primary">Add Coins</button>
   </div>

@@ -1,71 +1,47 @@
-<!--
-  Generated template for the MarketPage page.
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Coin Market</ion-title>
+  </ion-navbar>
+</ion-header>
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
-<ion-content padding-top>
-    <ion-grid>
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchText" [showCancelButton]="shouldShowCancel" (ionInput)="onInputSearch($event)" (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+  <ion-refresher (ionRefresh)="loadCoin($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-grid class='coin-card' *ngFor="let coin of coinList">
         <ion-row>
-            <ion-col>
-              <div class="aset">
-                Bitcoin
-              </div>
-            </ion-col>
             <ion-col col-2>
-                <div><ion-icon name="arrow-forward"></ion-icon></div>
+              <img src="{{imageHelper.getCoinImage(coin.symbol)}}" height="32" width="32">
             </ion-col>
-            <ion-col col-4>
-              <div class="price">
-                $36.8k
+            <ion-col col-6 class='vertical-center'>
+              <div>
+                <span class='bold'>{{ coin.symbol }}</span> |
+                <span>{{ coin.name }}</span>
               </div>
+            </ion-col>
+            <ion-col col-4 class='vertical-center'>
+              <span class='bold'> ${{ coin.price_usd }}</span>
             </ion-col>
           </ion-row>
           <ion-row>
-              <ion-col>
-                <div class="aset">
-                  Bitcoin
-                </div>
-              </ion-col>
-              <ion-col col-2>
-                  <div><ion-icon name="arrow-forward"></ion-icon></div>
-              </ion-col>
-              <ion-col col-4>
-                <div class="price">
-                  $36.8k
-                </div>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                  <div class="aset">
-                    Bitcoin
-                  </div>
-                </ion-col>
-                <ion-col col-2>
-                    <div><ion-icon name="arrow-forward"></ion-icon></div>
-                </ion-col>
-                <ion-col col-4>
-                  <div class="price">
-                    $36.8k
-                  </div>
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                  <ion-col>
-                    <div class="aset">
-                      Bitcoin
-                    </div>
-                  </ion-col>
-                  <ion-col col-2>
-                      <div><ion-icon name="arrow-forward"></ion-icon></div>
-                  </ion-col>
-                  <ion-col col-4>
-                    <div class="price">
-                      $36.8k
-                    </div>
-                  </ion-col>
-                </ion-row>
+            <ion-col col-4>
+              <span>1h: </span>
+              <span class='bold' [ngClass]="getPriceColor(coin.percent_change_1h)">{{ coin.percent_change_1h }} %</span>
+            </ion-col>
+            <ion-col col-4>
+              <span>24h: </span>
+              <span class='bold' [ngClass]="getPriceColor(coin.percent_change_24h)">{{ coin.percent_change_24h }} %</span>
+            </ion-col>
+            <ion-col col-4>
+              <span>7d: </span>
+              <span class='bold' [ngClass]="getPriceColor(coin.percent_change_7d)">{{ coin.percent_change_7d }} %</span>
+            </ion-col>
+          </ion-row>
+      <!-- <coin-card [coinData]='coin'></coin-card> -->
     </ion-grid>
+  </ion-list>
 </ion-content>

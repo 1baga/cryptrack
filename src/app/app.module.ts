@@ -16,6 +16,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HoldingsProvider } from '../providers/holdings/holdings';
 
+import { ImageHelper } from '../helper/image.helper';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -47,6 +49,7 @@ import { HoldingsProvider } from '../providers/holdings/holdings';
   providers: [
     StatusBar,
     SplashScreen,
+    ImageHelper,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HoldingsProvider,
   ]

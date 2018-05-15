@@ -1,0 +1,1 @@
+export const apiUrl: string = 'https://api.coinmarketcap.com/v1';

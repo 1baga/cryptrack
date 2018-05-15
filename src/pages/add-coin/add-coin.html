@@ -1,28 +1,39 @@
-<!--
-  Generated template for the AddCoinPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Coins</ion-title>
+  </ion-navbar>
+</ion-header>
+   
+   
 <ion-content padding>
-  <div id="back">
-      <ion-icon name="arrow-back" navPop>  back</ion-icon>
-  </div>
-  <br>
-
-  <ion-list>
-    <p>Choose Coin</p>    
-    <ion-item>
-      <ion-label>Asset</ion-label>
-      <ion-select [(ngModel)]="newAsset">
-        <ion-option value="nes" (click)="dot()">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
-        <ion-option value="ps">PlayStation</ion-option>
-        <ion-option value="genesis">Sega Genesis</ion-option>
-        <ion-option value="saturn">Sega Saturn</ion-option>
-        <ion-option value="snes">SNES</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  
+    <div class="message">  
+        <p><strong>Note:</strong> Listed prices are estimated. Rates may vary significantly across different exchanges.</p>
+    </div>
+  
+  
+    <ion-list>
+  
+        <ion-item>
+            <ion-label stacked>Crypto Code</ion-label>
+            <ion-input [(ngModel)]="cryptoCode" placeholder="(e.g. BTC, LTC, ETH)" type="text"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label stacked>Display Currency Code</ion-label>
+            <ion-input [(ngModel)]="displayCurrency" placeholder="(USD)" type="text"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label stacked>Amount Holding</ion-label>
+            <ion-input [(ngModel)]="amountHolding" type="number"></ion-input>
+        </ion-item>
+  
+    </ion-list>  
+  
+    <button ion-button full (click)="addHolding()" [disabled]="checkingValidity">Add Holding <ion-spinner *ngIf="checkingValidity"></ion-spinner></button>
+  
+    <p class="error-message" *ngIf="cryptoUnavailable">Sorry, that combination is not currently available. Make sure to only include a single code.</p>
+  
 </ion-content>
