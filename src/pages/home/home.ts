@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController, IonicPage } from 'ionic-angular';
 import { HoldingsProvider } from '../../providers/holdings/holdings';
+import { ImageHelper } from '../../helper/image.helper';
 
 
 import { AddCoinPage } from '../add-coin/add-coin';
@@ -14,7 +15,7 @@ export class HomePage {
   addPage: any;
   posts: any;
 
-  constructor(private holdingsProvider: HoldingsProvider, private navCtrl: NavController, public toastCtrl: ToastController) {
+  constructor(private imageHelper: ImageHelper, private holdingsProvider: HoldingsProvider, private navCtrl: NavController, public toastCtrl: ToastController) {
     this.addPage = AddCoinPage;
   }
 

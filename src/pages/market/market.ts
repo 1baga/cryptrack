@@ -55,7 +55,7 @@ export class MarketPage {
     this.coinListFiltered = this.coinList;
     if (refresher) refresher.complete();
     this.loading.dismiss();
-    console.log(this.coinList);
+    //console.log(this.coinList);
   }
 
   private filterCoins(val: any) {
