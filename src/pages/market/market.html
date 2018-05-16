@@ -5,14 +5,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchText" [showCancelButton]="shouldShowCancel" (ionInput)="onInputSearch($event)" (ionCancel)="onCancel($event)">
-  </ion-searchbar>
+  <p id="topp">Top Cryptocurrencies according to market volume</p>
   <ion-refresher (ionRefresh)="loadCoin($event)">
     <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
   <ion-list>
-    <ion-grid class='coin-card' *ngFor="let coin of coinList">
+    <ion-grid class='message' *ngFor="let coin of coinList">
         <ion-row>
             <ion-col col-2>
               <img src="{{imageHelper.getCoinImage(coin.symbol)}}" height="32" width="32">

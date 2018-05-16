@@ -1,5 +1,9 @@
 page-market {
 
+    ion-content{
+        background-color: map-get($colors, fb);
+    }
+
     .price-down {
         color: #ff4d4d;
       }
@@ -18,5 +22,11 @@ page-market {
     
       .duration {
         font-weight: bold;
+      }
+
+      #topp{
+          text-align: center;
+          font-size: 15px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
 }
