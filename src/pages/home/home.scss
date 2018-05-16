@@ -16,13 +16,25 @@ page-home {
     }
  
     .value {
-        margin-top: 10px;
-        font-size: 1.2em;
         color: map-get($colors, secondary);
+    }
+
+    .total {
+        color: map-get($colors, fb);
     }
 
     .message{
         margin-top: 90px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .mainElement{
+        font-size: 14px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        margin: 5px;
+        padding: 2px;
+        background-color: map-get($colors, light);
     }
     
 }

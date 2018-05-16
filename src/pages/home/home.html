@@ -7,7 +7,7 @@
   </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-fab right bottom [navPush]="addPage">
     <button ion-fab color="primary"><ion-icon name="add-circle"></ion-icon></button>
   </ion-fab>
@@ -26,11 +26,34 @@
   <ion-list no-lines>
  
       <ion-item-sliding *ngFor="let holding of holdingsProvider.holdings">
-
-        <ion-item class="holding">
-          <p><strong>{{holding.crypto}}/{{holding.currency}}</strong></p>
-          <p class="amount"><strong>Coins:</strong> {{holding.amount}} <strong>Value:</strong> {{holding.value}}</p>
-          <p *ngIf="holding.value > 0" class="value">{{holding.amount * holding.value}}</p>
+        <ion-item class="mainElement">
+            <ion-row>
+              <ion-col col-2>
+                <img src="{{imageHelper.getCoinImage(holding.crypto)}}" height="32" width="32">
+              </ion-col>
+              <ion-col col-6 class='vertical-center'>
+                <div>
+                  <span class='bold'>{{ holding.crypto }}</span> /
+                  <span>{{ holding.currency }}</span>
+                </div>
+              </ion-col>
+              <ion-col col-4 class='vertical-center value'>
+                <span class='bold'> Amount: {{ holding.amount }}</span>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-2>
+                
+              </ion-col>
+              <ion-col col-6 class='vertical-center'>
+                <div>
+                    <span>Value: ${{holding.value | number: '1.2-2'}}</span>
+                </div>
+              </ion-col>
+              <ion-col col-4 class='vertical-center total'>
+                <span class='bold' *ngIf="holding.value > 0"> Total: ${{ holding.amount * holding.value | number:'1.2-2'}}</span>
+              </ion-col>
+            </ion-row>
         </ion-item>
 
         <ion-item-options>

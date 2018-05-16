@@ -13,33 +13,33 @@
   <ion-list>
     <ion-grid class='message' *ngFor="let coin of coinList">
         <ion-row>
-            <ion-col col-2>
-              <img src="{{imageHelper.getCoinImage(coin.symbol)}}" height="32" width="32">
-            </ion-col>
-            <ion-col col-6 class='vertical-center'>
-              <div>
-                <span class='bold'>{{ coin.symbol }}</span> |
-                <span>{{ coin.name }}</span>
-              </div>
-            </ion-col>
-            <ion-col col-4 class='vertical-center'>
-              <span class='bold'> ${{ coin.price_usd }}</span>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col col-4>
-              <span>1h: </span>
-              <span class='bold' [ngClass]="getPriceColor(coin.percent_change_1h)">{{ coin.percent_change_1h }} %</span>
-            </ion-col>
-            <ion-col col-4>
-              <span>24h: </span>
-              <span class='bold' [ngClass]="getPriceColor(coin.percent_change_24h)">{{ coin.percent_change_24h }} %</span>
-            </ion-col>
-            <ion-col col-4>
-              <span>7d: </span>
-              <span class='bold' [ngClass]="getPriceColor(coin.percent_change_7d)">{{ coin.percent_change_7d }} %</span>
-            </ion-col>
-          </ion-row>
+          <ion-col col-2>
+            <img src="{{imageHelper.getCoinImage(coin.symbol)}}" height="32" width="32">
+          </ion-col>
+          <ion-col col-6 class='vertical-center'>
+            <div>
+              <span class='bold'>{{ coin.symbol }}</span> |
+              <span>{{ coin.name }}</span>
+            </div>
+          </ion-col>
+          <ion-col col-4 class='vertical-center'>
+            <span class='bold'> ${{ coin.price_usd }}</span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            <span>1h: </span>
+            <span class='bold' [ngClass]="getPriceColor(coin.percent_change_1h)">{{ coin.percent_change_1h }} %</span>
+          </ion-col>
+          <ion-col col-4>
+            <span>24h: </span>
+            <span class='bold' [ngClass]="getPriceColor(coin.percent_change_24h)">{{ coin.percent_change_24h }} %</span>
+          </ion-col>
+          <ion-col col-4>
+            <span>7d: </span>
+            <span class='bold' [ngClass]="getPriceColor(coin.percent_change_7d)">{{ coin.percent_change_7d }} %</span>
+          </ion-col>
+        </ion-row>
       <!-- <coin-card [coinData]='coin'></coin-card> -->
     </ion-grid>
   </ion-list>
