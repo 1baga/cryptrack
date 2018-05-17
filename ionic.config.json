@@ -1,6 +1,6 @@
 {
   "name": "cryptrack",
-  "app_id": "",
+  "app_id": "9fc8ec2f",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
