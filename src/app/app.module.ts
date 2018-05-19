@@ -7,7 +7,7 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { AddCoinPage } from '../pages/add-coin/add-coin';
+//import { AddCoinPage } from '../pages/add-coin/add-coin';
 import { MarketPage } from '../pages/market/market';
 import { SharePage } from '../pages/share/share';
 import { PromoPage } from '../pages/promo/promo';
@@ -22,7 +22,6 @@ import { ImageHelper } from '../helper/image.helper';
   declarations: [
     MyApp,
     MarketPage,
-    AddCoinPage,
     SharePage,
     HomePage,
     PromoPage,
@@ -39,7 +38,6 @@ import { ImageHelper } from '../helper/image.helper';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AddCoinPage,
     SharePage,
     MarketPage,
     HomePage,

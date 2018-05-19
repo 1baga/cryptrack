@@ -11,8 +11,6 @@ import { ImageHelper } from '../../helper/image.helper';
 export class MarketPage {
 
   private coinList: any = [];
-  private coinListFiltered: any = [];
-  private searchText: string;
   private loading: any;
 
   constructor(
@@ -52,29 +50,9 @@ export class MarketPage {
     this.initLoading();
     await this.loading.present();
     this.coinList = await this.holdingsProvider.fetchAll();
-    this.coinListFiltered = this.coinList;
     if (refresher) refresher.complete();
     this.loading.dismiss();
     //console.log(this.coinList);
-  }
-
-  private filterCoins(val: any) {
-    return function(coin: any) {
-      return (
-        coin.name.toLowerCase().indexOf(val.toLowerCase()) > -1 ||
-        coin.symbol.toLowerCase().indexOf(val.toLowerCase()) > -1
-      );
-    };
-  }
-
-  private onInputSearch(ev: any) {
-    if (this.coinList) {
-      this.coinListFiltered = this.coinList;
-      let val = ev.target.value;
-      if (val && val.trim() !== '') {
-        this.coinListFiltered = this.coinList.filter(this.filterCoins(val));
-      }
-    }
   }
 
 }
