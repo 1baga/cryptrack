@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController} from 'ionic-angular';
 import { HoldingsProvider } from '../../providers/holdings/holdings';
 
 @IonicPage({
@@ -17,7 +17,7 @@ export class AddCoinPage {
   private displayCurrency: string;
   private amountHolding;
 
-  constructor(private holdingsProvider: HoldingsProvider, private toastCtrl: ToastController, private navCtrl: NavController, private navParams: NavParams) {
+  constructor(private holdingsProvider: HoldingsProvider, private navCtrl: NavController) {
     
   }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import { HoldingsProvider } from '../../providers/holdings/holdings';
 import { ImageHelper } from '../../helper/image.helper';
 
@@ -13,9 +13,11 @@ import { AddCoinPage } from '../add-coin/add-coin';
 export class HomePage {
 
   addPage: any;
+  imh: any;
 
   constructor(private imageHelper: ImageHelper, private holdingsProvider: HoldingsProvider, private navCtrl: NavController) {
     this.addPage = AddCoinPage;
+    this.imh = imageHelper;
   }
 
   ionViewDidLoad() {
