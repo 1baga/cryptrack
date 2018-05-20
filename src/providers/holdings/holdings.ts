@@ -38,7 +38,7 @@ export class HoldingsProvider {
 
     return this.http.get(apiUrl + '/' + endpoint, reqOpts);
   }
-
+  
   addHolding(holding: Holding): void {
     this.holdings.push(holding);
     this.fetchPrices();
