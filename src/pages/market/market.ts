@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { HoldingsProvider } from '../../providers/holdings/holdings';
 import { ImageHelper } from '../../helper/image.helper';
 
-@IonicPage()
 @Component({
   selector: 'page-market',
   templateUrl: 'market.html',
